@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style1.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="script1.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Resume</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">About</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Sections <span class="caret"></span></a>
+					<ul class="dropdown-menu" id="sec-menu">
+						<li id="exp"><a href="#frm2">Experience</a></li>
+						<li><a href="#">Education</a></li>
+						<li><a href="#">Awards</a></li>
+						<li><a href="#">Projects</a></li>
+						<li><a href="#">Skills</a></li>
+					</ul></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Design</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4" id="frm1">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" id="name"
+							placeholder="Your Name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="position"
+							placeholder="Current Position">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="location"
+							placeholder="Current Location">
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" rows="5" id="desc"
+							placeholder="Tell us about yourself"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-4">
+				<div id="newExpButton">
+					<button id="newExp">
+						<span class="glyphicon glyphicon-plus"></span>Add New Experience
+					</button>
+				</div>
+				<div id="workdetailsDiv">
+					<div class="well well-lg clonedWorkDetailsDiv" id="workdetails1">
+						<span id="workinfo"></span> <span id="workinfoedit"
+							class="glyphicon glyphicon-pencil"></span> <span id="workinfodel"
+							class="glyphicon glyphicon-trash"></span>
+					</div>
+				</div>
+				<form id="frm2">
+					<div id="experiencediv1" class="clonedExpDiv">
+						<div class="form-group">
+							<input type="text" class="form-control exp-pos" id="position1"
+								placeholder="Position">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-comp" id="company1"
+								placeholder="Company">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="month" class="form-control exp-month" id="month1"
+										data-placeholder="Month">
+								</div>
+								<div class="col-sm-6">
+									<input type="year" class="form-control exp-year" id="year1"
+										placeholder="Year">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-loc" id="location1"
+								placeholder="Location">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control exp-desc" rows="5" id="desc1"
+								placeholder="Describe what to do"></textarea>
+						</div>
+						<button id="cancel" class="cancel">Cancel</button>
+						<button id="donebtn" class="done">Done</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-8">
+				<textarea class="form-control" rows="20" id="resume"></textarea>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style1.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="script1.js"></script>
+</head>
+
+<body>
+<header>
+<img alt="None" src="res.jpeg">
+</header>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Resume</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">About</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Sections <span class="caret"></span></a>
+					<ul class="dropdown-menu" id="sec-menu">
+						<li id="exp"><a href="#frm2">Experience</a></li>
+						<li id="edu"><a href="#frm3">Education</a></li>
+						<li><a href="#">Skills</a></li>
+					</ul></li>
+				<li id="finish"><a href="#">Finish</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4" id="frm1">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" id="name"
+							placeholder="Your Name" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="position"
+							placeholder="Current Position">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="location"
+							placeholder="Current Location">
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" rows="5" id="desc"
+							placeholder="Tell us about yourself"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-4" id="frm2">
+				<div id="newExpButton">
+					<button id="newExp">
+						<span class="glyphicon glyphicon-plus"></span>Add New Experience
+					</button>
+				</div>
+				<div id="workdetailsDiv">
+					<div class="well well-lg clonedWorkDetailsDiv" id="workdetails1">
+						<span id="workinfo1"></span> 
+						<span id="workinfoedit-1"
+							class="glyphicon glyphicon-pencil"></span> 
+						<span
+							id="workinfodel-1" class="glyphicon glyphicon-trash"></span>
+					</div>
+				</div>
+				<form id="form1">
+					<div id="experiencediv1" class="clonedExpDiv">
+						<div class="form-group">
+							<input type="text" class="form-control exp-pos" id="position1"
+								placeholder="Position">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-comp" id="company1"
+								placeholder="Company">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="month" class="form-control exp-month" id="month1"
+										data-placeholder="Month">
+								</div>
+								<div class="col-sm-6">
+									<input type="text" class="form-control exp-year" id="year1"
+										placeholder="Year">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control exp-loc" id="location1"
+								placeholder="Location">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control exp-desc" rows="5" id="desc1"
+								placeholder="Describe what to do"></textarea>
+						</div>
+						<!-- <button id="cancel-1" class="cancel">Cancel</button>-->
+						<button id="donebtn-1" class="done">Done</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-4" id="frm3">
+				<div id="newEduButton">
+					<button id="newEdu">
+						<span class="glyphicon glyphicon-plus"></span>Add Another Qualification
+					</button>
+				</div>
+				<div id="edudetailsDiv">
+					<div class="well well-lg clonedEduDetailsDiv" id="edudetails1">
+						<span id="eduinfo1"></span> 
+						<span id="eduinfoedit-1"
+							class="glyphicon glyphicon-pencil"></span> 
+						<span
+							id="eduinfodel-1" class="glyphicon glyphicon-trash"></span>
+					</div>
+				</div>
+				<form>
+					<div id="educationdiv1" class="clonedEduDiv">
+						<div class="form-group">
+							<input type="text" class="form-control edu-school" id="school1"
+								name="school1" placeholder="School">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="text" class="form-control edu-startyear"
+										id="startyear1" name="startyear1" placeholder="Start Year">
+								</div>
+								<div class="col-sm-6">
+									<input type="text" class="form-control edu-endyear"
+										id="endyear1" name="endyear1" placeholder="End Year">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+						<input type="checkbox" class="form-control edu-currentattend"
+								id="currentattend1" name="currentattend1"
+								value="I currently attend here"><label for="currentattend1"> I currently attend here</label>					
+						</div>
+						<div class="form-group">
+							<textarea class="form-control edu-achv" rows="5"
+								id="achievement1" name="achievement1" placeholder="Achievements"></textarea>
+						</div>
+						<!--<button id="educancel-1" class="cancel">Cancel</button>-->
+						<button id="edudonebtn-1" class="edudone">Done</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-8">
+			<div id="resume">
+			<p id="txt1"></p>
+			<p id="txt2"></p>
+			<p id="txt3"></p>
+			<p id="txt4"></p>			
+				<!-- <textarea class="form-control" rows="20" id="resume"></textarea>-->
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

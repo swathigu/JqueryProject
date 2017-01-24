@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--  <meta http-equiv="content-type" content="application/json; charset=UTF-8">-->
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$.fn.serializeFormJSON = function() {
+		var o = {};
+		var a = this.serializeArray();
+		$.each(a, function() {
+			/* var str = this.name;
+			for(var i=0;i<str.length;i++){
+				  if(!isNaN(str[i])){
+				     console.log(str[i]);
+				     }else{
+				       console.log("nooooo" + str[i]);
+				     }    
+				} */
+			if (o[this.name]) {
+				if (!o[this.name].push) {
+					o[this.name] = [ o[this.name] ];
+				}
+				o[this.name].push(this.value || '');
+			} else {
+				console.log(this.name);
+				o[this.name] = this.value || '';
+			}
+		});
+		return o;
+	}
+
+	$(document).ready(
+			function() {
+				$('#btn').click(function(e) {
+					e.preventDefault();
+					var data = $("#frm1").serializeFormJSON();
+					console.log(data);
+				});
+
+				$("#newExp").click(
+						function() { //generates the Cloned div when user adds new experience
+
+							var num = $('.clonedExpDiv').length;
+							var newNum = new Number(num + 1), newElem = $(
+									'#experiencediv' + num).clone().attr('id',
+									'experiencediv' + newNum).attr('name',
+									'experiencediv' + newNum);
+							newElem.find('.exp-pos').attr('id',
+									'position' + newNum).attr('name',
+									'position' + newNum).val('');
+							newElem.find('.exp-comp').attr('id',
+									'company' + newNum).attr('name',
+									'company' + newNum).val('');
+							newElem.find('.exp-month').attr('id',
+									'month' + newNum).attr('name',
+									'month' + newNum).val('');
+							newElem.find('.exp-year').attr('id',
+									'year' + newNum).attr('name',
+									'year' + newNum).val('');
+							newElem.find('.exp-loc').attr('id', 'loc' + newNum)
+									.attr('name', 'loc' + newNum).val('');
+							newElem.find('.exp-desc').attr('id',
+									'desc' + newNum).attr('name',
+									'desc' + newNum).val('');
+							newElem.find('.cancel').attr('id',
+									'cancel' + newNum).val('cancel11')
+							console.log(newElem);
+							$('#experiencediv' + num).after(newElem);
+						});
+			});
+</script>
+</head>
+<body>
+	<div id="div1">
+		<form action="#" method="post" id="frm1">
+			<div>
+				<label for="name">Name</label> <input type="text" name="name"
+					id="name" />
+			</div>
+			<div>
+				<label for="email">Email</label> <input type="text" name="email"
+					id="email" />
+			</div>
+			<div>
+				<label for="password">Password</label> <input type="password"
+					name="password" id="password" />
+			</div>
+
+			<div id="experiencediv1" class="clonedExpDiv">
+				<div class="form-group">
+					<input type="text" class="form-control exp-pos" id="position1"
+						name="position1" placeholder="Position">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control exp-comp" id="company1"
+						name="company1" placeholder="Company">
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-6">
+							<input type="month" class="form-control exp-month" id="month1"
+								name="month1" data-placeholder="Month">
+						</div>
+						<div class="col-sm-6">
+							<input type="year" class="form-control exp-year" id="year1"
+								name="year1" placeholder="Year">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control exp-loc" id="location1"
+						name="location1" placeholder="Location">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control exp-desc" rows="5" id="desc1"
+						name="desc1" placeholder="Describe what to do"></textarea>
+				</div>
+				<button id="cancel" class="cancel">Cancel</button>
+				<button id="donebtn" class="done">Done</button>
+			</div>
+		</form>
+	</div>
+	<div id="newExpButton">
+		<button id="newExp">
+			<span class="glyphicon glyphicon-plus"></span>Add New Experience
+		</button>
+	</div>
+	<button id="btn">CLick Me</button>
+</body>
+</html>
